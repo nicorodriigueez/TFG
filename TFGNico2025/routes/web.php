@@ -9,7 +9,26 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified','rolemanager:customer'])->name('dashboard');
+
+//rutas administrador
+
+Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
+   Route::controller(AdminMainController::class)->group(function () {
+    Route::prefix('admin')->group(function () {
+      Route::get('/dashboard', 'index')->name('admin');
+      });
+    
+   });
+});
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.admin');
+})->middleware(['auth', 'verified','rolemanager:admin'])->name('admin');
+
+Route::get('/vendor/dashboard', function () {
+    return view('vendor');
+})->middleware(['auth', 'verified','rolemanager:vendor'])->name('vendor');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
