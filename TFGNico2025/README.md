@@ -1,66 +1,181 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-SNEAKERS / e-comerce laravel 11 (TFG JUNIO 2025)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Bienvenido al proyecto **E-SNEAKERS**, este proyecto corresponde al TFG de DAW y consiste en un e-commerce desarrollado con Laravel 11, utilizando Breeze con Blade para el sistema de autenticación. Está preparado para ejecutarse en local de forma rápida y ordenada.
 
-## About Laravel
+## 🚀 Tecnologías utilizadas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Frontend**: Blade,html,javascript,css.
+- **Backend**: php.
+- **Base de datos**: PostgreSQL
+- **Contenedores**: Docker
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Funcionalidades principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Landing Page** pública:
+  - Hero llamativo (imagen/vídeo)
+  - Sección "Quiénes somos" y "Servicios"
+  - Carrito
+  - Catalogo
+  - Sistemas de pago
 
-## Learning Laravel
+- **Sistema de login y gestión de roles (CRUD)**:
+  - **Compradores**: comprar e interactuar con productos.
+  - **Administradores**: Gestionar y editar productos y funcionalidades de la tienda. Posibilidad de analisis.
+  - **Vendedores**: interactuar y editar productos.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Gestión de Productos**:
+  - Creación manual de eventos (admin)
+  - Solicitud de eventos (usuarios)
+  - Estados de eventos: disponible, reservado, cancelado
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Panel de usuario**:
+  - Gestión de perfil
+  - Visualización de solicitudes
+  - Vista calendario con solicitudes y estado
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Panel de administrador**:
+  - Gestión avanzada de solicitudes y usuarios
+  - Estadísticas de actividad
+  - Integración opcional con calendarios externos (Google Calendar, Outlook)
+ 
+- **Panel de Vendedor**:
+  - Posibilidad de solicitar nuevos eventos
+  - Visualización de eventos activos
+  - Visualización de eventos pasados
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+# 📚 Despliegue de una Aplicación Symfony y Angular con Docker Compose
+Este proyecto utiliza Docker y Docker Compose para desplegar una aplicación que incluye un backend Symfony, un frontend Angular y una base de datos PostgreSQL de manera rápida y sencilla.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 🛠️ Requisitos Previos
+Antes de comenzar, asegúrate de tener instalados en tu sistema:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- PHP 8.2 o superior
+- Composer
+- Node.js y npm
+---
+Puedes verificar que están instalados ejecutando:
 
-## Code of Conduct
+- php -v
+- composer -V
+- node -v
+- npm -v
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🚀 Instalación y Puesta en Marcha
 
-## Security Vulnerabilities
+### 1️⃣ Clonar el repositorio
+Ejecuta el siguiente comando para clonar el proyecto:
+```bash
+git clone git@github.com:nicorodriigueez/TFG.git
+cd TFG
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2️⃣ Instalar las dependencias de Laravel
 
-## License
+Para instalar las dependencias:
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 3️⃣ Configurar el entorno
+
+Genera una clave de aplicacion
+
+```bash
+php artisan key:generate
+```
+✏️ Edita el archivo .env y configura los datos de conexión a tu base de datos.
+
+Ejemplo:
+
+DB_CONNECTION=//tu base de datos(mysql,postgre...)
+DB_HOST=1//IP
+DB_PORT=//Puerto que usa
+DB_DATABASE=//nombre de la BBDD
+DB_USERNAME=//usuario
+DB_PASSWORD=//contraseña
+
+Asegurate de tener tus datos correctos para que no haya errores al migrar.
+
+### 4️⃣ Ejecutar las migraciones
+
+```bash
+php artisan migrate
+```
+
+## 5️⃣ Instalar Breeze con Blade
+
+```bash
+composer require laravel/breeze --dev
+php artisan breeze:install blade
+```
+📌 Si lanza error por falta de la vista welcome.blade.php, puedes crearla manualmente con:
+
+```bash
+echo "<h1>Laravel</h1>" > resources/views/welcome.blade.php
+```
+---
+
+## 6️⃣ Instalar las dependencias del frontend y compilar assets
+
+importante ejecutar npm run dev cada vez que se vuelva a iniciar el proyecto
+```bash
+dnpm install
+npm run dev
+```
+## 7️⃣ Levantar el servidor de desarrollo
+
+importante ejecutar npm run dev cada vez que se vuelva a iniciar el proyecto
+```bash
+php artisan serve
+```
+📌 Accede a la aplicación en tu navegador desde:
+http://127.0.0.1:8000/login
+
+## 🔄 Comandos Útiles
+
+- Detener el servidor:
+```bash
+ Ctrl + C en la terminal
+```
+- Volver a compilar assets al cambiar el CSS/JS: 
+```bash
+npm run dev
+```
+- Ver las rutas disponibles: 
+```bash
+php artisan route:list
+```
+- Volver a ejecutar migraciones: 
+```bash
+php artisan migrate:fresh
+```
+- 🧹 Limpiar el proyecto (opcional)
+
+Si quieres empezar desde cero, puedes eliminar vendor, node_modules, y limpiar cachés:
+```bash
+rm -rf vendor node_modules package-lock.json
+composer clear-cache
+composer install
+npm install
+```
+
+## 🎯 Notas Finales
+-Las vistas Blade se encuentran en: resources/views
+
+La ruta principal del login se encuentra en: routes/web.php
+
+Si modificas el CSS, asegúrate de compilarlo de nuevo con npm run dev
+
+Este proyecto no usa Vue ni React, solo Blade y TailwindCSS
+
+Para más información sobre **Symfony**, **Angular** o **PostgreSQL**, consulta sus respectivas documentaciones oficiales.
+
+🧑‍💻 Autor
+
+Nicolás Rodríguez Vázquez– Proyecto de Desarrollo de Aplicaciones Web (DAW 2025)
