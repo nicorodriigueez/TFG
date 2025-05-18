@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Admin\AdminMainController;
+use App\Http\Controllers\Seller\SellerMainController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -73,13 +74,37 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
    });
 }); 
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.admin');
-})->middleware(['auth', 'verified','rolemanager:admin'])->name('admin');
+//rutas vendedor
 
-Route::get('/vendor/dashboard', function () {
-    return view('vendor');
-})->middleware(['auth', 'verified','rolemanager:vendor'])->name('vendor');
+Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () {
+    Route::prefix('vendor')->group(function () {
+
+    Route::controller(SellerMainController::class)->group(function () {
+
+            Route::get('/dashboard', 'index')->name('vendor');
+            Route::get('/order/history', 'orderhistory')->name('vendor.order.history');
+            
+            
+        });
+
+    Route::controller(SellerProductController::class)->group(function () {
+
+            Route::get('/Product/create', 'index')->name('vendor.product');
+            Route::get('/Product/manage', 'manage')->name('vendor.product.manage');
+            
+            
+        });
+
+    Route::controller(SellerStoreController::class)->group(function () {
+
+            Route::get('/store/create', 'index')->name('vendor.store');
+            Route::get('/store/manage', 'manage')->name('vendor.store.manage');
+            
+            
+        });
+   });
+}); 
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
