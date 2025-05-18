@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\AdminMainController;
 use App\Http\Controllers\Seller\SellerMainController;
+use App\Http\Controllers\Customer\CustomerMainController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -9,10 +10,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified','rolemanager:customer'])->name('dashboard');
 
 //rutas administrador
 
@@ -104,7 +101,21 @@ Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () 
         });
    });
 }); 
+//rutas usuario
 
+Route::middleware(['auth', 'verified','rolemanager:customer'])->group(function () {
+    Route::prefix('user')->group(function () {
+
+    Route::controller(CustomerMainController::class)->group(function () {
+
+            Route::get('/dashboard', 'index')->name('dashboard');
+            Route::get('/order/history', 'history')->name('customer.history');
+            Route::get('/setting/payment', 'payment')->name('customer.payment');
+            Route::get('/affiliate', 'affiliate')->name('customer.affiliate');
+            
+        });
+   });
+}); 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
