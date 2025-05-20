@@ -1,52 +1,54 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    <div class="w-full max-w-md bg-white/90 backdrop-blur-sm border border-red-500 shadow-2xl rounded-xl p-8">
+        <div class="flex justify-center mb-6">
+            <img src="{{ asset('logolargoSF.png') }}" alt="Logo E-Sneakers" class="h-12">
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <h2 class="text-3xl font-bold text-center text-red-800 mb-4">Crear Cuenta</h2>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <form method="POST" action="{{ route('register') }}" class="space-y-4">
+            @csrf
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            <div>
+                <label for="name" class="block text-sm font-medium text-red-800">Nombre</label>
+                <input id="name" name="name" required autofocus
+                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-red-500 focus:border-red-500" />
+            </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-red-800">Email</label>
+                <input id="email" name="email" type="email" required
+                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-red-500 focus:border-red-500" />
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <div>
+                <label for="password" class="block text-sm font-medium text-red-800">Contraseña</label>
+                <input id="password" name="password" type="password" required
+                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-red-500 focus:border-red-500" />
+            </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+            <div>
+                <label for="password_confirmation" class="block text-sm font-medium text-red-800">Confirmar Contraseña</label>
+                <input id="password_confirmation" name="password_confirmation" type="password" required
+                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-red-500 focus:border-red-500" />
+            </div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <div>
+                <label for="role" class="block text-sm font-medium text-red-800">Rol</label>
+                <select name="role" id="role"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-red-500 focus:border-red-500">
+                    <option value="0">Administrador</option>
+                    <option value="1">Vendedor</option>
+                    <option value="2" selected>Cliente</option>
+                </select>
+            </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
+            <div class="pt-4">
+                <button type="submit"
+                        class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-md transition">
+                    Registrarse
+                </button>
+            </div>
+        </form>
+    </div>
 </x-guest-layout>

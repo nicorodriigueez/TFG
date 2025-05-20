@@ -7,9 +7,17 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test-form', function () {
+    return view('test-form');
 });
+
+Route::post('/test-form', function () {
+    return 'Formulario enviado correctamente';
+});
+
+Route::get('/', function () {
+    return view('landing');
+})->name('landing');
 
 //rutas administrador
 
