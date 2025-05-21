@@ -6,6 +6,11 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\MasterCategoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductAttributeController;
+use App\Http\Controllers\Admin\ProductDiscountController;
+use App\Http\Controllers\Seller\SellerProductController;
+use App\Http\Controllers\Seller\SellerStoreController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -74,6 +79,7 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
         Route::controller(MasterCategoryController::class)->group(function () {
 
             Route::post('/store/category', 'storecat')->name('store.cat');
+            Route::get('/category/{id}', 'showcat')->name('show.cat');
             
         });
    });
