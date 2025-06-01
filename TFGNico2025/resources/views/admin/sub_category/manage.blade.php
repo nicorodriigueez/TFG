@@ -32,7 +32,13 @@ Manage Sub Category
                               <td>{{$subcat->id}}</td>
                               <td>{{$subcat->subcategory_name}}</td>
                               <td>{{$subcat->category->category_name}}</td>
-                              <td><a href="" class="btn btn-info">Edit</a>
+                              <td><a href="{{route('show.subcat', $subcat->id)}}" class="btn btn-info">Edit</a>
+                              <form action="{{route('delete.subcat', $subcat->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                              </form>  
+                              </td> 
                              
                             </tr>
                             @endforeach

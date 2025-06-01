@@ -34,7 +34,7 @@
                          <button type="sumbit" class="btn btn-primary w-100 mt-2"> Add Category</button>
                         </form> 
 					</div>
-				</div>
+				</div> 
             </div>          
         </div>
        

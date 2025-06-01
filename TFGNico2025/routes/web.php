@@ -63,7 +63,11 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
     Route::controller(ProductAttributeController::class)->group(function () {
 
             Route::get('/productattribute/create', 'index')->name('productattribute.create');
-            Route::get('/productattribute/manage', 'manage')->name('productattribute.manage'); 
+            Route::get('/productattribute/manage', 'manage')->name('productattribute.manage');
+            Route::post('/defaultattribute/create', 'createattribute')->name('attribute.create');
+            Route::get('/defaultattribute/{id}', 'showattribute')->name('show.attribute');
+            Route::put('/defaultattribute/update/{id}','updateattribute')->name('update.attribute');
+            Route::delete('/defaultattribute/delete/{id}','deleteattribute')->name('delete.attribute'); 
             
             
         });
@@ -88,6 +92,9 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
          Route::controller(MasterSubCategoryController::class)->group(function () {
 
             Route::post('/store/subcategory', 'storesubcat')->name('store.subcat');
+            Route::get('/subcategory/{id}', 'showsubcat')->name('show.subcat');
+            Route::put('/subcategory/update/{id}','updatesubcat')->name('update.subcat');
+            Route::delete('/subcategory/delete/{id}','deletesubcat')->name('delete.subcat');
             
         });
    });
@@ -109,7 +116,9 @@ Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () 
     Route::controller(SellerProductController::class)->group(function () {
 
             Route::get('/Product/create', 'index')->name('vendor.product');
+            Route::post('/Product/store', 'storeproduct')->name('vendor.product.store');
             Route::get('/Product/manage', 'manage')->name('vendor.product.manage');
+           
             
             
         });
@@ -118,6 +127,7 @@ Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () 
 
             Route::get('/store/create', 'index')->name('vendor.store');
             Route::get('/store/manage', 'manage')->name('vendor.store.manage');
+            Route::post('/store/publish', 'store')->name('create.store');
             
             
         });
