@@ -1,3 +1,7 @@
+
+![logolargoSF](https://github.com/user-attachments/assets/b755d695-43d7-4e28-a0eb-03c300b757f1)
+
+
 # E-SNEAKERS / e-comerce laravel 11 (TFG JUNIO 2025)
 
 Bienvenido al proyecto **E-SNEAKERS**, este proyecto corresponde al TFG de DAW y consiste en un e-commerce desarrollado con Laravel 11, utilizando Breeze con Blade para el sistema de autenticación. Está preparado para ejecutarse en local de forma rápida y ordenada.
