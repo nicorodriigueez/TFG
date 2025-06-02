@@ -10,12 +10,18 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductAttributeController;
 use App\Http\Controllers\Admin\ProductDiscountController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Seller\SellerProductController;
 use App\Http\Controllers\Seller\SellerStoreController;
-use App\Livewire\HomepageComponent;
+use App\Livewire\HomepageComponent;     
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',HomepageComponent::class)->name('home');
+ Route::controller(HomePageController::class)->group(function () {
+
+         Route::get('/', 'index')->name('home');
+          
+            
+        });
 
 //rutas administrador
 
@@ -26,6 +32,7 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
 
             Route::get('/dashboard', 'index')->name('admin');
             Route::get('/settings', 'setting')->name('admin.settings');
+            Route::put('/setting/homepagesetting/update', 'updatehomepagesetting')->name('admin.homepagesetting.update');
             Route::get('/manage/users', 'manage_user')->name('admin.manage.user');
             Route::get('/manage/stores', 'manage_stores')->name('admin.manage.store');
             Route::get('/cart/history', 'cart_history')->name('admin.cart.history');
