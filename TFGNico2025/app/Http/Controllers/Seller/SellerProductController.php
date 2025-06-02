@@ -18,7 +18,11 @@ class SellerProductController extends Controller
     }
 
     public function manage(){
-        return view('seller.product.manage');
+
+        $currentSeller = Auth::id();
+
+        $products = Product::where('seller_id', $currentSeller)->get();
+        return view('seller.product.manage', compact('products'));
     }
 
     public function storeproduct(Request $request)
@@ -69,6 +73,11 @@ class SellerProductController extends Controller
         return redirect()->back()->with('message', 'Product created successfully');
  
  }
+ public function deleteproduct($id)
+{
+    Product::findOrFail($id)->delete();
+    return redirect()->back()->with('message', 'Producto eliminado correctamente');
+}
 }
 
 

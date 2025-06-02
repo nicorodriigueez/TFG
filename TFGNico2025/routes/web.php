@@ -12,11 +12,10 @@ use App\Http\Controllers\Admin\ProductAttributeController;
 use App\Http\Controllers\Admin\ProductDiscountController;
 use App\Http\Controllers\Seller\SellerProductController;
 use App\Http\Controllers\Seller\SellerStoreController;
+use App\Livewire\HomepageComponent;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',HomepageComponent::class)->name('home');
 
 //rutas administrador
 
@@ -118,6 +117,7 @@ Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () 
             Route::get('/Product/create', 'index')->name('vendor.product');
             Route::post('/Product/store', 'storeproduct')->name('vendor.product.store');
             Route::get('/Product/manage', 'manage')->name('vendor.product.manage');
+           Route::delete('/Product/delete/{id}', 'deleteproduct')->name('vendor.product.delete');
            
             
             
