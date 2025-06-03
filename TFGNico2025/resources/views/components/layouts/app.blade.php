@@ -58,7 +58,7 @@
                 <i class="fas fa-cart-plus"> </i>
             </a>
 
-            <a href="#!" class="btn-sm d-none d-sm-inline" style="background-color: rgba(239, 68, 68, 0.7); color: white;">
+            <a href="/register" class="btn-sm d-none d-sm-inline" style="background-color: rgba(239, 68, 68, 0.7); color: white;">
                 Sign In
             </a>
             </div>

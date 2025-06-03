@@ -51,7 +51,7 @@
                 <i class="fas fa-cart-plus"> </i>
             </a>
 
-            <a href="#!" class="btn-sm d-none d-sm-inline" style="background-color: rgba(239, 68, 68, 0.7); color: white;">
+            <a href="{{ route('login') }}" class="btn-sm d-inline-block" >
                 Sign In
             </a>
             </div>
@@ -71,7 +71,7 @@
       <div class="container">
         <ul class="navlinks">
           <li>
-            <a href="#!">Trending</a>
+            <a href="{{ route('about') }}">About</a>
           </li>
           <li class="position-relative">
             <!-- dropdown toggler -->
@@ -157,7 +157,7 @@
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
             <a class="logo" href="#!">
               <img src="img/logo.svg" alt="">
-              <span>QuickCart</span>
+              <span>E-Sneakers</span>
             </a>
 
             <p class="mt-3">Where brands meets happiness. Customer smile is our first priority.</p>
@@ -169,7 +169,7 @@
                 <p class="title">About Us</p>
               </li>
               <li>
-                <a href="#!">About QuickCart</a>
+                <a href="#!">About E-Sneakers</a>
               </li>
               <li>
                 <a href="#!">Career</a>

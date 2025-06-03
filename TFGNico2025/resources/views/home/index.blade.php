@@ -9,11 +9,13 @@
                 <h2>{{$homepagesetting->discount_percent}}%</h2>
                 <h4>{{$homepagesetting->discount_heading}}</h4>
                 <p>{{$homepagesetting->discount_subheading}}</p>
-
-                <div class="float-item">
-                   <img src="{{ asset('storage/' . $homepagesetting->discountedProduct->images->first()->img_path) }}"alt=""
-                        style="width: 300px; margin-top: 20px;">
-                    </div>
+<<div class="float-item mt-3 d-block d-md-inline-block">
+  <img
+    src="{{ asset('storage/' . $homepagesetting->discountedProduct->images->first()->img_path) }}"
+    alt=""
+    class="img-fluid"
+    style="width: 300px; max-width: 100%; height: auto; display: block; margin: 20px auto 0 auto;">
+</div>
                 </div>
             </div>
 

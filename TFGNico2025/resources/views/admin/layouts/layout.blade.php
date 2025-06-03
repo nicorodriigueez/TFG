@@ -17,6 +17,7 @@
 	<title>@yield('admin_page_title')</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
 	integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+	
 </head>
 
 
@@ -34,15 +35,8 @@
         </a>
 
 				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Main
-					</li>
+					
 
-					<li class="sidebar-item {{request()->routeIs('admin') ? 'active' : ''}}"> <!-- asignamos la clase active a la ruta admin-->
-						<a class="sidebar-link" href="{{route('admin')}}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Admin</span>
-            </a>
-					</li>
 
 					<li class="sidebar-header">
 						Category
@@ -92,52 +86,13 @@
             </a>
 					</li>
 
-					<li class="sidebar-header">
-						Discount
-					</li>
-
-					<li class="sidebar-item {{request()->routeIs('discount.create') ? 'active' : ''}}"> 
-						<a class="sidebar-link" href="{{route('discount.create')}}">
-              <i class="align-middle" data-feather="plus"></i> <span class="align-middle">Create</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item {{request()->routeIs('discount.manage') ? 'active' : ''}}"> 
-						<a class="sidebar-link" href="{{route('discount.manage')}}">
-              <i class="align-middle" data-feather="list"></i> <span class="align-middle">Manage</span>
-            </a>
-					</li>
-					<li class="sidebar-header">
-						Product
-					</li>
-
-					<li class="sidebar-item {{request()->routeIs('product.manage') ? 'active' : ''}}"> 
-						<a class="sidebar-link" href="{{route('product.manage')}}">
-              <i class="align-middle" data-feather="shopping-bag"></i> <span class="align-middle">Manage Product</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item {{request()->routeIs('product.review.manage') ? 'active' : ''}}"> 
-						<a class="sidebar-link" href="{{route('product.review.manage')}}">
-              <i class="align-middle" data-feather="star"></i> <span class="align-middle">Manage Review</span>
-            </a>
-					</li>
-
+					
+					
 					<li class="sidebar-header">
 						History
 					</li>
 
-					<li class="sidebar-item {{request()->routeIs('admin.cart.history') ? 'active' : ''}}"> 
-						<a class="sidebar-link" href="{{route('admin.cart.history')}}">
-              <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Cart</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item {{request()->routeIs('admin.order.history') ? 'active' : ''}}"> 
-						<a class="sidebar-link" href="{{route('admin.order.history')}}">
-              <i class="align-middle" data-feather="list"></i> <span class="align-middle">Order</span>
-            </a>
-					</li>
+					
 
 					<li class="sidebar-item {{request()->routeIs('admin.Settings') ? 'active' : ''}}"> 
 						<a class="sidebar-link" href="{{route('admin.settings')}}">

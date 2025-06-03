@@ -23,6 +23,10 @@ use Illuminate\Support\Facades\Route;
             
         });
 
+        Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 //rutas administrador
 
 Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
