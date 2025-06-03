@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- title -->
-    <title>QuickCart || Details</title>
+    <title>E-Sneakers</title>
+    @livewireStyles
   </head>
 
   <body>
@@ -147,6 +148,8 @@
         @yield('home')
       
         @livewire('FlashSellCountdownComponent')
+
+        @livewire('GlobalCartManager')
         
     </main>
 
@@ -226,6 +229,9 @@
       </div>
     </footer>
 
+        @livewireScripts
+
+
     <!-- javaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -250,6 +256,25 @@
             items: 1
           }
         }
+      })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      document.addEventListener('livewire:init',()=>{
+        window.Livewire.on('notify',({title= 'Notification', type='info'}) => {
+          console.log('Livewire Notify received', title, type);
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: type,
+            title: title,
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            
+          });
+        })
       })
     </script>
   </body>

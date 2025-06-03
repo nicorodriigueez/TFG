@@ -7,7 +7,7 @@
               <div class="flash-sale-wrap"  style="background: linear-gradient(to bottom, #dc2626, #1f2937);">
                 <h2 class="flash-sale-title" >
                   <img class="d-none d-sm-inline" src="img/icons/flash.svg" alt="">
-                  <span class="text-white" >Flash Sell Ending</span>
+                  <span class="text-white" >CESUR SALES ENDING</span>
                 </h2>
 
                 <div id="timer" class="flash-sale-timer">
